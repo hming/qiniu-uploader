@@ -39,7 +39,7 @@ class HomeController extends Controller
         if (!$request->hasFile('file')) {
             return redirect()->back();
         }
-        $targetName = 'image/' . $input['target'];
+        $targetName = 'images/' . $input['target'];
         $image      = ImageUtil::upload($request->file->getPathname(), $targetName);
         return response()->json($image);
     }
