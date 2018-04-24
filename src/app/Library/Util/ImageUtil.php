@@ -24,16 +24,6 @@ class ImageUtil
     public static $uploader;
     public static $accessDomain;
 
-    const TYPE_ITEM         = 'item'; //商品类型
-    const TYPE_POSTER       = 'poster'; //海报
-    const TYPE_MALL         = 'mall'; //商城
-    const TYPE_ASSETS       = 'assets'; //资源
-    const TYPE_STORE        = 'store'; //门店
-    const TYPE_OTHER        = 'other'; //其他
-    const TYPE_MINI_PROGRAM = 'mini_program'; //小程序
-    const TYPE_WASHING      = 'washing'; //洗车
-    const TYPE_QR_CODE      = 'qrcode'; // 二维码
-
     /**
      * 下载远程图片到本地.
      *
@@ -156,51 +146,5 @@ class ImageUtil
         }
 
         return null;
-    }
-
-    /**
-     * 根据类型获得远程目录.
-     *
-     * @param $type
-     *
-     * @return string
-     *
-     * @author wanghaiming@vchangyi.com
-     */
-    public static function getRemoteFolder($type)
-    {
-        $fileName = '';
-        if (env('APP_ENV') == 'develop') {
-            $fileName = 'dev/';
-        }
-        if (env('APP_ENV') == 'local') {
-            $fileName = 'local/';
-        }
-        if (env('APP_ENV') == 'develop') {
-            $fileName = 'test/';
-        }
-
-        switch ($type) {
-            case self::TYPE_ITEM:
-                return $fileName.'images/item/';
-            case self::TYPE_POSTER:
-                return $fileName.'images/poster/';
-            case self::TYPE_MALL:
-                return $fileName.'images/mall/';
-            case self::TYPE_STORE:
-                return $fileName.'images/store/';
-            case self::TYPE_ASSETS:
-                return $fileName.'images/assets/';
-            case self::TYPE_MINI_PROGRAM:
-                return $fileName.'images/mini_program/';
-            case self::TYPE_WASHING:
-                return $fileName.'images/washing/';
-            case self::TYPE_OTHER:
-                return $fileName.'images/other/';
-            case self::TYPE_QR_CODE:
-                return $fileName.'images/qrcode/';
-            default:
-                return $fileName.'images/other/';
-        }
     }
 }
