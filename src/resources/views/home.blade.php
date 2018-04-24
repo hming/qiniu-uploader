@@ -34,7 +34,7 @@
                         </form>
                         <br/>
                         <span class="successMsg" style="color: green;">上传成功</span>
-                        <span class="successMsg">文件路径：<a href="" id="qiniuUrl"></a> </span>
+                        <span class="successMsg">文件路径：<a href="" id="qiniuUrl" target="_blank"></a> </span>
                     @endauth
                 </div>
 

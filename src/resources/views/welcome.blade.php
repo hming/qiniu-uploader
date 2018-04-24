@@ -76,9 +76,15 @@
         </div>
     @endif
 
-    <div>
-
-    </div>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-header links" ><a href="{{route('home')}}" style="font-size: 32px;">去上传图片</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
 </div>
 </body>
 </html>
