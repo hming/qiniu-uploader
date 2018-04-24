@@ -7,8 +7,9 @@ COPY src /data/www
 COPY dockerfiles/supervisor/queue.conf /etc/supervisor/conf.d/
 COPY dockerfiles/supervisor/chown.conf /etc/supervisor/conf.d/
 
-#VOLUME /data/www/storage/framework
+VOLUME /data/www/storage/framework
 
 RUN cd /data/www && \
     composer install --no-dev -vvv && \
     chown -R nginx:nginx /data/www
+
